@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.scouter"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <!-- MAIN ACTIVITY -->
+        <activity
+            android:name="com.example.scouter.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- MATCH ACTIVITY -->
+        <activity
+            android:name="com.example.scouter.MatchActivity"
+            android:label="@string/title_activity_match"
+            android:parentActivityName="com.example.scouter.MainActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <!-- QRCODE ACTIVITY -->
+        <activity
+            android:name="com.scouter.activities.QRGeneratorActivity"
+            android:label="@string/title_activity_match"
+            android:parentActivityName="com.example.scouter.MainActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <!-- HELP ACTIVITIES -->
+        <activity
+            android:name="com.example.scouter.help.MainHelpActivity"
+            android:label="@string/txt_help"
+            android:parentActivityName="com.example.scouter.MainActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.scouter.help.MatchHelpActivity"
+            android:parentActivityName="com.example.scouter.MatchActivity"
+            android:label="@string/txt_help"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- //////////////// -->
+        
+    </application>
+
+</manifest>

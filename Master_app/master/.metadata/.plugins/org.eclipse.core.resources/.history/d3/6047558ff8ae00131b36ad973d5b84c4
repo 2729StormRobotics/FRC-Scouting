@@ -1,0 +1,143 @@
+package graphs;
+
+
+public class GraphHandler {
+
+	private AerialAssist robot;
+	
+	public static void main(String[] args) {
+		
+		GraphHandler g = new GraphHandler(new AerialAssist("2607,10,1,0,1,0,0,0,0,1,3,'0,0,1',0,0,0,'0,1,1',0,2,0,'0,1,0','0,1,0','1,0,0',2,1,0,'2,-1,2','50,157,29'"));
+		
+		System.out.println("FEEDER: " + g.arrayToString(g.getFeederData()));
+		System.out.println("CENTER: " + g.arrayToString(g.getCenterData()));
+		System.out.println("GOAL: " + g.arrayToString(g.getGoalData()));
+		System.out.println("TOTAL: " + g.arrayToString(g.getTotalData()));
+		
+	}
+	
+	public GraphHandler(AerialAssist a) {
+		
+		this.robot = a;
+		
+	}
+	
+	public int[] getFeederData() {
+		
+		int[] data = new int[4];
+		
+		data[0] = (int) (this.getSum(robot.getTrussThrowArray()) / 20 * .2);
+		
+		try{
+			data[1] = (int) ((robot.getCatchFZone() + robot.getThrowFZone()) / 
+							(this.getSum(robot.getAssistThrowArray()) + this.getSum(robot.getAssistCatchArray())) * .3);
+		}catch(Exception e){
+			
+		}
+
+		data[2] = (int) (robot.getCycle() / 6 * .25);
+			
+		data[3] = (int) ((robot.getBottomAuto() + robot.getTopAuto()) / 75 * .25);
+		
+		return data;
+		
+	}
+	
+	public int[] getCenterData() {
+		
+		int[] data = new int[5];
+		
+		data[0] = (int) (this.getSum(robot.getTrussThrowArray()) / 20 * .2);
+		
+		data[1] = (int) (this.getSum(robot.getTrussCatchArray()) / 6 * .05);
+		
+		try{
+			data[2] = (int) ((robot.getCatchTZone() + robot.getThrowTZone()) / 
+							(this.getSum(robot.getAssistThrowArray()) + this.getSum(robot.getAssistCatchArray())) * .3);
+		}catch(Exception e){
+			
+		}
+		
+		data[3] = (int) (robot.getCycle() / 6 * .25);
+		
+		data[4] = (int) ((robot.getBottomAuto() + robot.getTopAuto()) / 75 * .25);
+		
+		return data;
+		
+	}
+	
+	public int[] getGoalData() {
+	
+		int[] data = new int[6];
+	
+		data[0] = (int) (this.getSum(robot.getTrussThrowArray()) / 20 * 20);
+		
+		data[1] = (int) (/*this.getSum(robot.getTrussCatchArray())*/ 12 / 6 * 5);
+		
+		try{
+			data[2] = (int) (((robot.getTopAuto() + robot.getTopTele()) / 
+							(robot.getTopAuto() + robot.getTopTele() + 
+							robot.getTopMissesAuto() + robot.getTopMissesTele())) * 15);	
+		}catch(Exception e) {
+			
+		}
+		
+		try{
+			data[3] = (int) ((robot.getCatchGZone() + robot.getThrowGZone()) / 
+				        	(this.getSum(robot.getAssistThrowArray()) + this.getSum(robot.getAssistCatchArray())) * 30);
+		}catch(Exception e) {
+		
+		}	
+		
+		data[4] = (int) (robot.getCycle() / 6 * 25);
+		
+		data[5] = (int) ((robot.getBottomAuto() + robot.getTopAuto()) / 75 * 25);
+		
+		return data;
+	
+	}
+	
+	public int[] getTotalData() {
+
+		int[] data = new int[3],
+			  feederData = this.getFeederData(),
+			  centerData = this.getCenterData(),
+			  goalData = this.getGoalData();
+		
+		data[0] = (int) Math.floor(this.getSum(feederData) / 3.0);
+		data[1] = (int) Math.floor(this.getSum(centerData) / 3.0);
+		data[2] = (int) Math.ceil(this.getSum(goalData) / 3.0);
+	
+		return data;
+	
+	}
+	
+	public int getSum(int[] array) {
+		
+		int sum = 0;
+		
+		for(int i: array)
+			sum += i;
+		
+		return sum;
+		
+	}
+	
+	public String arrayToString(int[] array) {
+		
+		String result = "[";
+		
+		for(int i=0; i< array.length; i++){
+			
+			if(i == array.length - 1)
+				result += array[i] + "]";
+			else
+				result += array[i] + ",";
+			
+		}
+		
+		return result;
+		
+	}
+	
+}

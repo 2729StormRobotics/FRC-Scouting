@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Master</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_text">Storm Scouting</string>
+    <string name="text_scan">New Scan</string>
+    <string name="text_addData">Move Temporary \n Storage to Database</string>
+    <string name="text_search_team">Search Team</string>
+    <string name="tableTitle">Temporary Storage</string>
+    <string name="test_team_num"></string>
+    <string name="team_num">Team #</string>
+    <string name="team_number_hint">Team #</string>
+    <string name="team_rating">Team Rating</string>
+    <string name="ranking_title">Team Rankings</string>
+    <string name="long_string">Please Update Database Data</string>
+    <string name="text_downloadXMLAuto">Download Auto XML Files</string>
+    <string name="text_downloadXMLTele">Download Tele XML Files</string>
+    <string name="text_downloadTXT">Download Text File</string>
+    <string name="title_activity_scanner_fragment">ScannerFragment</string>
+    <string name="title_activity_download_fragment">DownloadFragment</string>
+    <string name="title_activity_data_fragment">DataFragment</string>
+    <string name="title_activity_new_scan">New Scan</string>
+    <string name="text_updateData">Update Data</string>
+    <string name="text_update_ranking">Update Rankings</string>
+    <string name="text_clearData">Clear All Data</string>
+    <string name="title_activity_driver_fragment">DriverFragment</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_ranking_fragment">RankingFragment</string>
+    <string name="title_activity_auto">Auto</string>
+    <string name="title_activity_auto_fragment">AutoFragment</string>
+    <string name="title_activity_assists_fragment">AssistsFragment</string>
+    <string name="title_activity_cycle_fragment">CycleFragment</string>
+    <string name="title_activity_truss_shot_fragment">TrussShotFragment</string>
+    <string name="title_activity_goals_fragment">GoalsFragment</string>
+
+</resources>

@@ -1,0 +1,156 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.example.master.fragments.CycleFragment"
+    android:background="@drawable/bg_gradient" >
+    
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">    
+    
+    <!--                  SEARCH TEAM LAYOUT                            -->
+    
+    <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+   		android:paddingTop="10dp"
+	    android:orientation="horizontal" >
+        	
+	    <EditText
+	        android:id="@+id/team_num_search_1"
+	        android:layout_height="45dp"
+	        android:layout_width="wrap_content"
+	        android:layout_marginTop="10dp"
+	        android:layout_marginLeft="1dp"
+	        android:gravity="center"
+	        android:background="#ffffff"
+	        android:ems="10"
+	        android:hint="@string/team_number_hint"
+	        android:inputType="number"
+	        android:layout_weight="4" />
+	    <EditText
+	        android:id="@+id/team_num_search_2"
+	        android:layout_height="45dp"
+	        android:layout_width="wrap_content"
+	        android:layout_marginTop="10dp"
+	        android:layout_marginLeft="1dp"
+	        android:gravity="center"
+	        android:background="#ffffff"
+	        android:ems="10"
+	        android:hint="@string/team_number_hint"
+	        android:inputType="number"
+	        android:layout_weight="4" />
+	    <EditText
+	        android:id="@+id/team_num_search_3"
+	        android:layout_height="45dp"
+	        android:layout_width="wrap_content"
+	        android:layout_marginTop="10dp"
+	        android:layout_marginLeft="1dp"
+	        android:gravity="center"
+	        android:background="#ffffff"
+	        android:ems="10"
+	        android:hint="@string/team_number_hint"
+	        android:inputType="number"
+	        android:layout_weight="4" />
+	    
+ 	</LinearLayout>
+    <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+   		android:paddingTop="10dp"
+	    android:orientation="horizontal" >
+	    
+	    <EditText
+	        android:id="@+id/team_num_search_4"
+	        android:layout_height="45dp"
+	        android:layout_width="wrap_content"
+	        android:layout_marginTop="10dp"
+	        android:layout_marginLeft="1dp"
+	        android:gravity="center"
+	        android:background="#ffffff"
+	        android:ems="10"
+	        android:hint="@string/team_number_hint"
+	        android:inputType="number"
+	        android:layout_weight="4" />
+	    <EditText
+	        android:id="@+id/team_num_search_5"
+	        android:layout_height="45dp"
+	        android:layout_width="wrap_content"
+	        android:layout_marginTop="10dp"
+	        android:layout_marginLeft="1dp"
+	        android:gravity="center"
+	        android:background="#ffffff"
+	        android:ems="10"
+	        android:hint="@string/team_number_hint"
+	        android:inputType="number"
+	        android:layout_weight="4" />
+	    <EditText
+	        android:id="@+id/team_num_search_6"
+	        android:layout_height="45dp"
+	        android:layout_width="wrap_content"
+	        android:layout_marginTop="10dp"
+	        android:layout_marginLeft="1dp"
+	        android:gravity="center"
+	        android:background="#ffffff"
+	        android:ems="10"
+	        android:hint="@string/team_number_hint"
+	        android:inputType="number"
+	        android:layout_weight="4" />
+
+ 	</LinearLayout>
+    
+	    <Button
+	        android:id="@+id/button_searchTeam"
+	        android:layout_width="match_parent"
+	        android:layout_height="0dip"
+	        android:onClick="updateRanking4"
+	        android:text="@string/text_search_team" 
+	        android:layout_weight="1"/>
+   
+ 	
+    <!--                          TEAM RANKINGS TABLE                      -->
+   	
+	<TableLayout 
+	    android:id = "@+id/rankings_tl_cycle"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:stretchColumns="1">
+	    
+	    <TableRow 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center">
+	        
+	        <TextView 
+		        android:gravity="left"
+		        android:text="@string/team_num"
+		        android:textColor="@color/text_main"
+		        android:textSize="20sp" 
+		        android:layout_height="wrap_content"
+		        android:layout_width="wrap_content"
+		        android:padding="5dp" 
+		        android:layout_margin="5dp"
+	            />
+	        
+	        <TextView 
+		        android:gravity="center"
+		        android:text="@string/team_rating"
+		        android:textColor="@color/text_main"
+		        android:textSize="20sp" 
+		        android:layout_height="wrap_content"
+		        android:layout_width="wrap_content"
+		        android:padding="5dp" 
+		        android:layout_margin="5dp"
+	            />
+	    </TableRow>
+    </TableLayout>
+	</LinearLayout>
+
+</ScrollView>

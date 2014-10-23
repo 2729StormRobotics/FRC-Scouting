@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Scouting Radar</string>
+    <string name="action_settings">Settings</string>
+    <string name="team_number">   Enter Team Number</string>
+    <string name="begin_match">Begin Match</string>
+    <string name="title_activity_match">Match #</string>
+    <string name="match_number">   Enter Match Number</string>
+    <string name="title_name">Storm Scouting</string>
+    <string name="txt_blueTeam">Blue Alliance</string>
+    <string name="txt_redTeam">Red Alliance</string>
+
+    <!-- AUTONOMOUS STRINGS -->
+    <string name="autonomous">Autonomous</string>
+    <string name="txt_top">Top</string>
+    <string name="txt_bottom">Bottom</string>
+    <string name="txt_topHot">Top Hot</string>
+    <string name="txt_bottomHot">Bot. Hot</string>
+    <string name="txt_moved">Moved</string>
+    <string name="txt_defense">Defense</string>
+    <string name="txt_toTeleOp">to Tele-Op</string>
+    <string name="txt_shoot">Shooting:</string>
+    <string name="txt_clear">Clear</string>
+    <string name="txt_false">False</string>
+    <string name="txt_true">True</string>
+
+    <!-- TELEOP STRINGS -->
+    <string name="teleOp">Tele-Op</string>
+    <string name="txt_assist">Assists:</string>
+    <string name="txt_receive">Receive</string>
+    <string name="txt_receivePlus">Receive +</string>
+    <string name="txt_throw">Throw</string>
+    <string name="txt_throwPlus">Throw +</string>
+    <string name="txt_truss">Truss Pass:</string>
+    <string name="txt_miss">Miss</string>
+    <string name="txt_scoring">Scoring:</string>
+    <string name="txt_endcycle">End Cycle (Robot wasn\'t scorer)</string>
+    <string name="txt_fZone">Feeder Zone</string>
+    <string name="txt_tZone">Truss Zone</string>
+    <string name="txt_gZone">Goal Zone</string>
+    <string name="txt_NA">N/A</string>
+    <string name="txt_endMatch">End Match</string>
+    <string name="txt_zero">0</string>
+    <string name="txt_minus">-</string>
+    <string name="txt_assistThrown">Assists Thrown: 0</string>
+    <string name="txt_assistCaught">Assists Caught: 0</string>
+    <string name="txt_cycle">Cycle: </string>
+    <string name="txt_score">Score: </string>
+
+    <!-- SUBMIT STRINGS -->
+    <string name="submit">Submit</string>
+    <string name="title_activity_main_help">MainHelpActivity</string>
+    <string name="hello_world">Hello world!</string>
+
+    <!-- HELP STRINGS -->
+    <string name="txt_help">Help</string>
+    <string name="txt_autoScore">Autonomous Scoring</string>
+    <string name="txt_autoOther">Autonomous Extras</string>
+    <string name="txt_assists">Assists</string>
+    <string name="txt_truss">Truss Assists</string>
+    <string name="txt_scoring">Tele-Op Scoring</string>
+    
+    <string name="maintxt_enterTeamNum">-First, enter your robot\'s team number.</string>
+    <string name="maintxt_enterMatchNum">-Second, enter the current match number.</string>
+    <string name="maintxt_enterColor">-Select your robot\'s alliance color.</string>
+    <string name="maintxt_begin">-Once all of your data is entered, press "Begin Match".</string>
+    <string name="helptxt_return">-Press the back button in the top left to return to the previous page.</string>
+    
+    <string name="autotxt_scoring">-The top section of buttons are for scoring in autonomous, 
+        						    each time your robot scores a goal, press the appropriate
+        							button to record it.</string>
+    <string name="autotxt_clear">-If you mess up, press clear to reset the robot\'s goals.</string>
+    <string name="autotxt_other">-If your robot moves out of the white zone, or defends
+        						  against the other robots, check the appropriate boxes.</string>
+    <string name="autotxt_note">-Remember, this page is only for autonomous, once the tele-op
+        						 portion of the match begins, go to the next tab, labeled "Tele-Op"</string>
+        						 
+    <string name="teletxt_assists">-The top section of Tele-Op is for assists.</string>
+    <string name="teletxt_assists2">-When your robot either passes or receives an assist, select
+        							 the zone that the assist originated from, then press "Throw"
+        							 or "Receive".</string>
+        							 
+    <string name="teletxt_truss">-The middle section is dedicated to truss passes, or assists that
+        						  are thrown over the middle truss.</string>
+	<string name="teletxt_truss2">-If your robot attempts to throw over the truss, but the ball doesn\'t
+	    						   make it over, press the miss button.</string>
+	<string name="teletxt_truss3">-If you mess up, press clear to reset the truss assists for that cycle.</string>
+	
+	<string name="teletxt_scoring">-the bottom section if for recording how each cycle ends. If your robot
+	    							scores, press "Top" or "Bottom" whenever appropriate. If your robot misses,
+	    							press "Miss". If your robot is not the scorer, just press "End Cycle"</string>
+	
+	<string name="teletxt_note">-Repeat for each cycle, once the match is over press "End Match" to go to the submit tab.</string>
+    
+</resources>

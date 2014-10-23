@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data-set xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<record>
+		<TeamNumber>1234</TeamNumber>
+		<MatchNumber>12</MatchNumber>
+		<Alliance>Blue</Alliance>
+		<Score1>6</Score1>
+		<Score2>6</Score2>
+		<Move>5</Move>
+		<Defense>1</Defense>
+	</record>
+	<record>
+		<TeamNumber>2729</TeamNumber>
+		<MatchNumber>4</MatchNumber>
+		<Alliance>Red</Alliance>
+		<Score1>15</Score1>
+		<Score2>15</Score2>
+		<Move>5</Move>
+		<Defense>0</Defense>
+	</record>
+	<record>
+		<TeamNumber>1111</TeamNumber>
+		<MatchNumber>21</MatchNumber>
+		<Alliance>Blue</Alliance>
+		<Score1>15</Score1>
+		<Score2>15</Score2>
+		<Move>5</Move>
+		<Defense>0</Defense>
+	</record>
+</data-set>
