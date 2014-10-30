@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Submit</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="inputText">input text &#8230;</string>
+    <string name="outputText">This will be replaced with what you wish to convert into a qr code</string>
+    <string name="bText">Convert To QR</string>
+    <string name="title_activity_display_message">QR Code</string>
+
+</resources>

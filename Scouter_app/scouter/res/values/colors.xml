@@ -1,0 +1,26 @@
+<resources>
+
+    <color name="black_overlay">#66000000</color>
+    
+    <color name="red">#ff3333</color>
+    <color name="blue">#5c85ff</color>
+    <color name="white">#ffffff</color>
+    
+    <color name="red_select">#dd2222</color>
+    <color name="blue_select">#3a63dd</color>
+    <color name="white_select">#dddddd</color>
+    
+    <color name="transparent">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="onSelect">#FFFFFF</color>
+    
+    <color name="grpBox">#23888888</color>
+    <color name="grpBox_stroke">#CCAAAAAA</color>
+    
+    <color name="chkBox_off">#88FF7519</color>
+    <color name="chkBox_on">#FFFF7519</color>
+    
+    <color name="text_main">#FFFFFF</color>
+    <color name="text_sub">#444444</color>
+
+</resources>

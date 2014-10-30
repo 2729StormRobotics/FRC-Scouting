@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/bg_gradient"
+    android:screenOrientation="portrait">
+
+    <LinearLayout
+         android:layout_width="match_parent"
+    	 android:layout_height="wrap_content"
+         android:orientation="vertical"
+         android:layout_marginTop="30dp"
+         android:paddingTop="5dp"
+  		 android:paddingLeft="20dp"
+  		 android:paddingRight="20dp">
+	
+	    <EditText
+	        android:id="@+id/te_team_num"
+	        android:layout_width="match_parent"
+	        android:layout_height="50sp"
+	        android:layout_gravity="center_horizontal"
+	        android:background="#ffffff"
+	        android:ems="10"
+	        android:hint="@string/team_number" 
+	        android:layout_marginTop="5dp"
+	        android:inputType="number"
+	        android:layout_marginBottom="10dp"/>
+	    
+	    <EditText
+	        android:id="@+id/te_match_num"
+	        android:layout_width="match_parent"
+	        android:layout_height="50sp"
+	        android:layout_gravity="center_horizontal"
+	        android:background="#ffffff"
+	        android:ems="10"
+	        android:inputType="number"
+	        android:hint="@string/match_number" />
+	    
+	    	 
+	    <!-- TEAM COLOR SELECT -->
+	        <RadioGroup
+	            android:layout_width="match_parent"
+	         	android:layout_height="wrap_content"
+	        	android:layout_gravity="center_vertical"
+	         	android:baselineAligned="false"
+	         	android:orientation="horizontal"
+	         	android:layout_marginTop="5dp">
+	    	 
+	            <RadioButton 
+	                android:id="@+id/btn_blue"
+	                android:layout_width="match_parent"
+	         		android:layout_height="50sp"
+	         		android:layout_weight="1"
+	         		android:textColor="#000000"
+	         		android:gravity="center"
+	         		android:background="@drawable/trans_bzone_border"
+	         		android:text="@string/txt_blueTeam"/>
+	            
+	            <RadioButton 
+	                android:id="@+id/btn_red"
+	                android:layout_width="match_parent"
+	         		android:layout_height="50sp"
+	         		android:layout_weight="1"
+	         		android:textColor="#000000"
+	         		android:gravity="center"
+	         		android:background="@drawable/trans_rzone_border"
+	         		android:text="@string/txt_redTeam"/>
+	            
+	        </RadioGroup>
+	    
+	    <Button
+	        android:id="@+id/btn_begin"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_horizontal"
+	        android:layout_marginTop="10dp"
+	        android:onClick="startMatch"
+	        android:text="@string/begin_match"
+	        android:textColor="#000000" />
+    
+    </LinearLayout>
+        
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="250sp"
+            android:layout_height="250sp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/storm_logo_text_v2" />
+
+        <ImageView
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="17dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/first" />
+
+    </RelativeLayout>
+
+</LinearLayout>

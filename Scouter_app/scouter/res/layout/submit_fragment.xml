@@ -1,0 +1,165 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SubmitFragment"
+    android:background="@drawable/bg_gradient"
+    android:orientation="vertical"
+    android:paddingTop="5dp"
+ 	android:paddingLeft="20dp"
+	android:paddingRight="20dp">
+  		 
+    <!-- general info -->
+   	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:padding="5dp"
+	 	android:layout_marginTop="5dp"
+	 	android:layout_marginBottom="5dp"
+	 	android:background="@drawable/grp_box">
+   
+        <TextView
+    	    android:id="@+id/submit_teamNum"
+    	    android:layout_width="match_parent"
+    	 	android:layout_height="wrap_content"
+			android:textColor="@color/text_main"
+    	 	android:text="@string/txt_zero"/>
+    	
+    	<TextView
+    	    android:id="@+id/submit_matchNum"
+    	    android:layout_width="match_parent"
+    	 	android:layout_height="wrap_content"
+    	 	android:textColor="@color/text_main"
+    	 	android:text="@string/txt_zero"/>
+    	
+    	<TextView
+    	    android:id="@+id/submit_cycleNum"
+    	    android:layout_width="match_parent"
+    	 	android:layout_height="wrap_content"
+			android:textColor="@color/text_main"
+    	 	android:text="@string/txt_zero"/>
+    	
+    	<TextView 
+    	    android:id="@+id/submit_alliance"
+    	    android:layout_width="match_parent"
+    	 	android:layout_height="wrap_content"
+    	 	android:textColor="@color/text_main"
+    	 	android:text="@string/txt_zero"/>
+   	
+   	</LinearLayout>
+    <!-- /////////////// -->
+   	
+    <!-- autonomous info -->
+   	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:padding="5dp"
+	 	android:layout_marginTop="5dp"
+	 	android:layout_marginBottom="5dp"
+	 	android:background="@drawable/grp_box">
+    	
+   	    <TextView
+    	    android:layout_width="match_parent"
+    	 	android:layout_height="wrap_content"
+    	 	android:layout_gravity="center_horizontal"
+    	 	android:textColor="@color/text_main"
+    	 	android:text="@string/autonomous"/>
+       
+    	<TextView
+    	    android:id="@+id/submit_topGoals"
+    	    android:layout_width="match_parent"
+    	 	android:layout_height="wrap_content"
+    	 	android:textColor="@color/text_main"
+    	 	android:text="@string/txt_zero"
+    	 	android:layout_marginLeft="5dp"/>
+    	
+    	<TextView
+    	    android:id="@+id/submit_bottomGoals"
+    	    android:layout_width="match_parent"
+    	 	android:layout_height="wrap_content"
+    	 	android:textColor="@color/text_main"
+    	 	android:text="@string/txt_zero"
+    	 	android:layout_marginLeft="5dp"/>
+   	
+   	</LinearLayout>
+    <!-- //////////// -->
+   
+    <!-- tele op info -->	
+   	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:padding="5dp"
+	 	android:layout_marginTop="5dp"
+	 	android:layout_marginBottom="5dp"
+	 	android:background="@drawable/grp_box">
+    	
+   	    <TextView
+    	    android:layout_width="match_parent"
+    	 	android:layout_height="wrap_content"
+    	 	android:layout_gravity="center_horizontal"
+    	 	android:textColor="@color/text_main"
+    	 	android:text="@string/teleOp"/>
+    	
+   	    <TextView
+    	    android:id="@+id/submit_assistsThrown"
+    	    android:layout_width="match_parent"
+    	 	android:layout_height="wrap_content"
+    	 	android:textColor="@color/text_main"
+    	 	android:text="@string/txt_zero"
+    	 	android:layout_marginLeft="5dp"/>
+    	
+    	<TextView
+    	    android:id="@+id/submit_assistsCaught"
+    	    android:layout_width="match_parent"
+    	 	android:layout_height="wrap_content"
+    	 	android:textColor="@color/text_main"
+    	 	android:text="@string/txt_zero"
+    	 	android:layout_marginLeft="5dp"/>
+    	
+    	<TextView
+    	    android:id="@+id/submit_trussesThrown"
+    	    android:layout_width="match_parent"
+    	 	android:layout_height="wrap_content"
+    	 	android:textColor="@color/text_main"
+    	 	android:text="@string/txt_zero"
+    	 	android:layout_marginLeft="5dp"/>
+    	
+    	<TextView
+    	    android:id="@+id/submit_trussesCaught"
+    	    android:layout_width="match_parent"
+    	 	android:layout_height="wrap_content"
+    	 	android:textColor="@color/text_main"
+    	 	android:text="@string/txt_zero"
+    	 	android:layout_marginLeft="5dp"/>
+    	
+    	<TextView
+    	    android:id="@+id/submit_topTele"
+    	    android:layout_width="match_parent"
+    	 	android:layout_height="wrap_content"
+    	 	android:textColor="@color/text_main"
+    	 	android:text="@string/txt_zero"
+    	 	android:layout_marginLeft="5dp"/>
+    	
+    	<TextView
+    	    android:id="@+id/submit_bottomTele"
+    	    android:layout_width="match_parent"
+    	 	android:layout_height="wrap_content"
+    	 	android:textColor="@color/text_main"
+    	 	android:text="@string/txt_zero"
+    	 	android:layout_marginLeft="5dp"/>
+   	    
+   	 </LinearLayout>
+     <!-- /////////////// -->
+       
+   	 <Button
+        android:id="@+id/btn_submitData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submit" 
+        android:textColor="@color/text_main"
+        android:onClick="submit"/>
+       
+</LinearLayout>

@@ -1,0 +1,194 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	    xmlns:tools="http://schemas.android.com/tools"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    tools:context=".MatchHelpActivity" 
+	    android:background="@drawable/bg_gradient">
+	
+	<LinearLayout 
+	    android:padding="10dp"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical">
+	
+	    <LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:padding="10dp" 
+		    android:background="@drawable/grp_box">
+	    
+	        <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginBottom="10dp"
+		        android:text="@string/txt_autoScore"
+		        android:textColor="@color/text_main"
+		        android:textSize="20sp"/>
+	        
+		    <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginBottom="10dp"
+		        android:text="@string/autotxt_scoring"
+		        android:textColor="@color/text_main"
+		        android:textSize="20sp"/>
+		    
+		    <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginBottom="10dp"
+		        android:text="@string/autotxt_clear"
+		        android:textColor="@color/text_main"
+		        android:textSize="20sp"/>
+		    
+		    </LinearLayout>  
+		     
+	    <LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:padding="10dp" 
+		    android:layout_marginTop="10dp"
+		    android:background="@drawable/grp_box">
+	    
+	        <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginBottom="10dp"
+		        android:text="@string/txt_autoOther"
+		        android:textColor="@color/text_main"
+		        android:textSize="20sp"/>
+	        
+	        
+		     <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginBottom="10dp"
+		        android:text="@string/autotxt_other"
+		        android:textColor="@color/text_main"
+		        android:textSize="20sp"/>
+		      
+		     <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginBottom="10dp"
+		        android:text="@string/autotxt_note"
+		        android:textColor="@color/text_main"
+		        android:textSize="20sp"/>
+	     
+	     </LinearLayout>
+	     
+	    <LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:padding="10dp" 
+		    android:layout_marginTop="10dp"
+		    android:background="@drawable/grp_box">
+	    
+	        <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginBottom="10dp"
+		        android:text="@string/txt_assists"
+		        android:textColor="@color/text_main"
+		        android:textSize="20sp"/>
+	        
+		     <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginBottom="10dp"
+		        android:text="@string/teletxt_assists"
+		        android:textColor="@color/text_main"
+		        android:textSize="20sp"/>
+		      
+		     <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginBottom="10dp"
+		        android:text="@string/teletxt_assists2"
+		        android:textColor="@color/text_main"
+		        android:textSize="20sp"/>
+	     
+	     </LinearLayout>
+	     
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="10dp"
+	        android:background="@drawable/grp_box"
+	        android:orientation="vertical"
+	        android:padding="10dp" >
+
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="10dp"
+	            android:text="@string/txt_truss"
+	            android:textColor="@color/text_main"
+	            android:textSize="20sp" />
+	        
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="10dp"
+	            android:text="@string/teletxt_truss"
+	            android:textColor="@color/text_main"
+	            android:textSize="20sp" />
+
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="10dp"
+	            android:text="@string/teletxt_truss2"
+	            android:textColor="@color/text_main"
+	            android:textSize="20sp" />
+
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="10dp"
+	            android:text="@string/teletxt_truss3"
+	            android:textColor="@color/text_main"
+	            android:textSize="20sp" />
+	    </LinearLayout>
+	     
+	    <LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:padding="10dp" 
+		    android:layout_marginTop="10dp"
+		    android:background="@drawable/grp_box">
+	    
+	        <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginBottom="10dp"
+		        android:text="@string/txt_scoring"
+		        android:textColor="@color/text_main"
+		        android:textSize="20sp"/>
+	        
+		     <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/teletxt_scoring"
+		        android:textColor="@color/text_main"
+		        android:textSize="20sp"/>
+	     
+	     </LinearLayout>
+		     
+	     <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="10dp"
+	        android:text="@string/helptxt_return"
+	        android:textColor="@color/text_main"
+	        android:textSize="20sp"
+	        android:padding="10dp" 
+		    android:background="@drawable/grp_box"/>
+	
+	</LinearLayout>
+
+</ScrollView>

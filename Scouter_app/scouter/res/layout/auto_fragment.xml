@@ -1,0 +1,184 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AutoFragment" 
+    android:orientation="vertical"
+    android:background="@drawable/bg_gradient"
+    android:padding="10dp">
+    
+    <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center_vertical"
+         android:baselineAligned="false"
+         android:orientation="vertical"
+    	 android:layout_marginBottom="10dp"
+    	 android:padding="5dp"
+    	 android:background="@drawable/grp_box">
+    	 
+        <TextView
+        	android:layout_width="wrap_content"
+         	android:layout_height="wrap_content" 
+         	android:textColor="@color/text_main"
+            android:text="@string/txt_shoot"/>
+        
+     	<LinearLayout
+	         android:layout_width="match_parent"
+	         android:layout_height="wrap_content"
+	         android:baselineAligned="false"
+	         android:orientation="horizontal"
+	         android:gravity="center_horizontal">
+	    	 
+     	    <LinearLayout
+		         android:layout_width="match_parent"
+		         android:layout_height="wrap_content"
+		         android:baselineAligned="false"
+		         android:orientation="vertical"
+		         android:layout_weight="1">
+		         
+     	        <Button 
+			       android:id="@+id/btn_top"
+			       android:layout_width="match_parent"
+			       android:layout_height="wrap_content"
+			       android:onClick="buttonClickedAuto"
+			       android:text="@string/txt_top"
+			       android:textColor="@color/text_main"/>
+     	        
+     	        <Button
+			       android:id="@+id/btn_bottom"
+			       android:layout_width="match_parent"
+			       android:layout_height="wrap_content"
+			       android:onClick="buttonClickedAuto"
+			       android:text="@string/txt_bottom"
+			       android:textColor="@color/text_main"/>
+     	        
+     	    </LinearLayout>
+     	    
+     	    <LinearLayout
+		         android:layout_width="match_parent"
+		         android:layout_height="wrap_content"
+		         android:baselineAligned="false"
+		         android:orientation="vertical"
+		         android:layout_weight="1">
+		         
+     	        <Button 
+			       android:id="@+id/btn_topMiss"
+			       android:layout_width="match_parent"
+			       android:layout_height="wrap_content"
+			       android:onClick="buttonClickedAuto"
+			       android:text="@string/txt_miss"
+			       android:textColor="@color/text_main"/>
+     	        
+     	        
+     	    </LinearLayout>
+     	    
+     	    <LinearLayout
+		         android:layout_width="match_parent"
+		         android:layout_height="wrap_content"
+		         android:baselineAligned="false"
+		         android:orientation="vertical"
+		         android:layout_weight="1">
+		         
+     	        <Button 
+			       android:id="@+id/btn_topHot"
+			       android:layout_width="match_parent"
+			       android:layout_height="wrap_content"
+			       android:onClick="buttonClickedAuto"
+			       android:text="@string/txt_topHot"
+			       android:textColor="@color/text_main"/>
+     	        
+     	         <Button
+			       android:id="@+id/btn_bottomHot"
+			       android:layout_width="match_parent"
+			       android:layout_height="wrap_content"
+			       android:onClick="buttonClickedAuto"
+			       android:text="@string/txt_bottomHot"
+			       android:textColor="@color/text_main"/>
+     	        
+     	    </LinearLayout>  
+	   
+	   </LinearLayout>
+   
+       <Button 
+	       android:id="@+id/btn_clearAuto"
+	       android:layout_width="match_parent"
+	       android:layout_height="wrap_content"
+	       android:onClick="buttonClickedAuto"
+	       android:text="@string/txt_clear"
+	       android:textColor="@color/text_main"/>
+       
+    </LinearLayout>
+    
+    
+    <LinearLayout
+	       android:layout_width="match_parent"
+	       android:layout_height="wrap_content"
+	       android:baselineAligned="false"
+	       android:orientation="vertical"
+	       android:padding="5dp"
+	       android:layout_marginBottom="10dp"
+	       android:background="@drawable/grp_box">
+    
+         <LinearLayout
+		       android:layout_width="match_parent"
+		       android:layout_height="wrap_content"
+		       android:baselineAligned="false"
+		       android:orientation="horizontal">
+        
+		   <Button 
+		       android:id="@+id/btn_moved"
+		       android:layout_width="0dp"
+		       android:layout_height="wrap_content"
+		       android:layout_weight="2"
+		       android:text="@string/txt_moved"
+		       android:onClick="buttonClickedAuto"
+		       android:layout_marginRight="5dp"
+		       android:textColor="@color/text_main"/>
+		   
+		   <CheckBox
+	           android:id="@+id/chk_move"
+	           android:clickable="false"
+	           android:layout_marginRight="10dp"
+		       android:layout_width="25dp"
+		       android:layout_height="match_parent"
+		       android:textColor="@color/text_main"/>
+		   
+		   </LinearLayout>
+	   
+       <LinearLayout
+	       android:layout_width="match_parent"
+	       android:layout_height="wrap_content"
+	       android:baselineAligned="false"
+	       android:orientation="horizontal">
+         
+		   <Button
+		       android:id="@+id/btn_defense"
+		       android:layout_width="0dp"
+		       android:layout_height="wrap_content"
+		       android:layout_weight="2"
+		       android:text="@string/txt_defense"
+		       android:textColor="@color/text_main"
+		       android:onClick="buttonClickedAuto"
+		       android:layout_marginRight="5dp"/>
+		   
+		   <CheckBox
+	           android:id="@+id/chk_defense"
+	           android:clickable="false"
+	           android:layout_marginRight="10dp"
+		       android:layout_width="25dp"
+		       android:layout_height="match_parent"/>
+		   
+		   </LinearLayout>
+   
+   </LinearLayout>
+   
+   <Button 
+       android:id="@+id/btn_toTeleOp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="@string/txt_toTeleOp"
+       android:onClick="switchTabs"
+       android:textColor="@color/text_main"/>
+   
+</LinearLayout>

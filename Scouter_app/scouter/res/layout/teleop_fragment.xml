@@ -1,0 +1,456 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".TeleOpFragment" 
+    android:orientation="vertical"
+    android:background="@drawable/bg_gradient"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+        android:orientation="vertical"
+    	android:padding="10dp">
+    	
+        <!-- ///SHOWS SCORE AND OTHER INFO/// -->
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+        	android:orientation="horizontal"
+        	android:baselineAligned="false"
+        	android:layout_marginBottom="10dp"
+        	android:textSize="7pt">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+    			android:layout_height="wrap_content"
+        		android:orientation="vertical"
+				android:layout_weight="4"
+				android:background="@color/red"
+				android:padding="5dp">
+                
+                <TextView
+                    android:layout_width="match_parent"
+			        android:layout_height="match_parent"
+			        android:text="@string/txt_cycle"
+			        android:textColor="@color/text_sub"/>
+                
+                <TextView
+                    android:layout_width="match_parent"
+			        android:layout_height="match_parent"
+			        android:text="@string/txt_score"
+			        android:textColor="@color/text_sub"/>
+                
+            </LinearLayout>
+	            
+            <LinearLayout
+                android:layout_width="match_parent"
+    			android:layout_height="wrap_content"
+        		android:orientation="vertical"
+        		android:layout_weight="1"
+        		android:background="@color/white"
+        		android:padding="5dp">
+                
+                <TextView
+			        android:id="@+id/tv_cycleNum"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="@string/txt_cycle"
+			        android:layout_gravity="right"
+			        android:textColor="@color/text_sub"/>
+                
+                <TextView
+			        android:id="@+id/tv_scoreNum"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="@string/txt_score"
+			        android:layout_gravity="right"
+			        android:textColor="@color/text_sub"/>
+                
+            </LinearLayout>
+            
+        </LinearLayout>
+        
+        <!-- //////////////////////////////// -->
+    
+		    
+		    
+	    <!-- ASSIST LAYOUT -->
+	     
+	      <LinearLayout
+		         android:layout_width="match_parent"
+		         android:layout_height="wrap_content"
+		         android:layout_gravity="center_vertical"
+		         android:baselineAligned="false"
+		         android:orientation="vertical"
+		    	 android:padding="5dp"
+		    	 android:background="@drawable/grp_box"
+		    	 android:layout_marginBottom="10dp">
+		    	 
+	          <LinearLayout
+		         android:layout_width="250dp"
+		         android:layout_height="wrap_content"
+		         android:baselineAligned="false"
+		         android:layout_gravity="center_horizontal"
+		         android:orientation="horizontal">
+	         	 
+			      <TextView 
+			       	    android:id="@+id/tv_TeleThrownAssist"
+			       	    android:layout_width="match_parent"
+			        	android:layout_height="wrap_content"
+			        	android:layout_weight="1"
+			        	android:text="@string/txt_assistThrown"
+			        	android:textSize="5pt"
+			        	android:textColor="@color/text_main"/>
+			        	
+			      <TextView 
+			       	    android:id="@+id/tv_TeleCaughtAssist"
+			       	    android:layout_width="match_parent"
+			        	android:layout_height="wrap_content"
+			        	android:layout_weight="1"
+			        	android:text="@string/txt_assistCaught"
+			        	android:textSize="5pt"
+			        	android:textColor="@color/text_main"/>
+		      
+	        </LinearLayout>
+	 
+	          <LinearLayout
+		         android:layout_width="match_parent"
+		         android:layout_height="wrap_content"
+		         android:layout_gravity="center_vertical"
+		         android:baselineAligned="false"
+		         android:orientation="horizontal">
+		         
+	             <LinearLayout
+	                 android:id="@+id/layout_redzone"
+			         android:layout_width="match_parent"
+			         android:layout_height="wrap_content"
+			         android:layout_weight="1"
+			         android:baselineAligned="false"
+			         android:orientation="vertical"
+			         android:background="@drawable/high_rzone_border"
+			         android:onClick="selectZone"
+			         android:paddingLeft="5dp"
+		    	 	 android:paddingTop="2dp"
+		    	 	 android:paddingRight="5dp"
+		    	 	 android:paddingBottom="2dp">
+			         
+	                 <TextView
+	                    android:id="@+id/tv_redzone_title"
+		        		android:layout_width="wrap_content"
+		        		android:layout_height="wrap_content"
+		        		android:text="@string/txt_fZone"
+		        		android:textColor="@color/text_sub"/> 
+		        		     		
+	                  <TextView
+	                    android:id="@+id/tv_redzoneThrownAssist"
+		        		android:layout_width="wrap_content"
+		        		android:layout_height="wrap_content"
+		        		android:layout_gravity="center_horizontal"
+		        		android:text="@string/txt_zero"
+		        		android:textColor="@color/text_sub"/> 
+	                 
+	                  <TextView
+	                    android:id="@+id/tv_redzoneCaughtAssist"
+		        		android:layout_width="wrap_content"
+		        		android:layout_height="wrap_content"
+		        		android:layout_gravity="center_horizontal"
+		        		android:text="@string/txt_zero"
+		        		android:textColor="@color/text_sub"/> 
+	              
+	             </LinearLayout>
+	             
+	             <LinearLayout
+	                 android:id="@+id/layout_tzone"
+			         android:layout_width="match_parent"
+			         android:layout_height="wrap_content"
+			         android:layout_weight="1"
+			         android:baselineAligned="false"
+			         android:orientation="vertical"
+			         android:background="@drawable/trans_wzone_border"
+			         android:onClick="selectZone"
+			         android:paddingLeft="5dp"
+		    	 	 android:paddingTop="2dp"
+		    	 	 android:paddingRight="5dp"
+		    	 	 android:paddingBottom="2dp">
+	              
+	                 <TextView
+		        		android:layout_width="match_parent"
+		        		android:layout_height="wrap_content"
+		        		android:text="@string/txt_tZone"
+		        		android:textColor="@color/text_sub"/> 
+	                 	        		
+	                  <TextView
+	                    android:id="@+id/tv_tzoneThrownAssist"
+		        		android:layout_width="wrap_content"
+		        		android:layout_height="wrap_content"
+		        		android:layout_gravity="center_horizontal"
+		        		android:text="@string/txt_zero"
+		        		android:textColor="@color/text_sub"/> 
+	                 
+	                 
+	                 <TextView
+	                    android:id="@+id/tv_tzoneCaughtAssist"
+		        		android:layout_width="wrap_content"
+		        		android:layout_height="wrap_content"
+		        		android:layout_gravity="center_horizontal"
+		        		android:text="@string/txt_zero"
+		        		android:textColor="@color/text_sub"/> 
+	
+	             </LinearLayout>
+	             
+	             <LinearLayout
+	                 android:id="@+id/layout_bluezone"
+			         android:layout_width="match_parent"
+			         android:layout_height="wrap_content"
+			         android:layout_weight="1"
+			         android:baselineAligned="false"
+			         android:orientation="vertical"
+			         android:background="@drawable/trans_bzone_border"
+			         android:onClick="selectZone"
+			         android:paddingLeft="5dp"
+		    	 	 android:paddingTop="2dp"
+		    	 	 android:paddingRight="5dp"
+		    	 	 android:paddingBottom="2dp">
+	              
+	                 <TextView
+	                    android:id="@+id/tv_bluezone_title"
+		        		android:layout_width="match_parent"
+		        		android:layout_height="wrap_content"
+		        		android:text="@string/txt_gZone"
+		        		android:textColor="@color/text_sub"/> 
+		        		
+	                 <TextView
+	                    android:id="@+id/tv_bluezoneThrownAssist"
+		        		android:layout_width="wrap_content"
+		        		android:layout_height="wrap_content"
+		        		android:layout_gravity="center_horizontal"
+		        		android:text="@string/txt_zero"
+		        		android:textColor="@color/text_sub"/> 
+	                 
+	                 <TextView
+	                    android:id="@+id/tv_bluezoneCaughtAssist"
+		        		android:layout_width="wrap_content"
+		        		android:layout_height="wrap_content"
+		        		android:layout_gravity="center_horizontal"
+		        		android:text="@string/txt_zero"
+		        		android:textColor="@color/text_sub"/> 
+	                 
+	             </LinearLayout>
+	                 
+	          </LinearLayout>
+	          <!-- ////////////////////// -->
+	          	
+	          <!-- ASSIST BUTTONS -->
+	          	 <LinearLayout
+			         android:layout_width="match_parent"
+			         android:layout_height="wrap_content"
+			         android:baselineAligned="false"
+			         android:orientation="horizontal">
+	             
+	          	     <Button 
+	        	        android:id="@+id/btn_assistThrowAdd"
+	        	        android:layout_width="match_parent"
+			         	android:layout_height="match_parent"
+			         	android:layout_weight="1"
+			         	android:text="@string/txt_throwPlus"
+			         	android:textColor="@color/text_main"
+			         	android:onClick="buttonClickedTele"/>
+	          	     
+	          	     <Button 
+	        	        android:id="@+id/btn_assistThrowMinus"
+	        	        android:layout_width="match_parent"
+			         	android:layout_height="wrap_content"
+			         	android:layout_weight="4"
+			         	android:text="@string/txt_minus"
+			         	android:textColor="@color/text_main"
+			         	android:onClick="buttonClickedTele"
+			         	android:textSize="35sp"/>
+	          	     
+	          	</LinearLayout>
+	          	
+	         	 <LinearLayout
+			         android:layout_width="match_parent"
+			         android:layout_height="wrap_content"
+			         android:baselineAligned="false"
+			         android:orientation="horizontal">
+	            
+	         	     <Button 
+		       	        android:id="@+id/btn_assistCaughtAdd"
+		       	        android:layout_width="match_parent"
+			         	android:layout_height="match_parent"
+			         	android:layout_weight="1"
+			         	android:text="@string/txt_receivePlus"
+			         	android:textColor="@color/text_main"
+			         	android:onClick="buttonClickedTele"/>
+	         	     
+	         	     <Button 
+		       	        android:id="@+id/btn_assistCaughtMinus"
+		       	        android:layout_width="match_parent"
+			         	android:layout_height="wrap_content"
+			         	android:layout_weight="4"
+			         	android:text="@string/txt_minus"
+			         	android:textColor="@color/text_main"
+			         	android:onClick="buttonClickedTele"
+			         	android:textSize="35sp"/>
+	          	     
+	          	</LinearLayout>
+		    	 
+	       </LinearLayout>
+	       <!-- //////////////////// -->
+		     
+		   <!-- TRUSS LAYOUT --> 
+		    
+		    <LinearLayout
+		    	android:layout_width="match_parent"
+		    	android:layout_height="wrap_content"
+		   		android:orientation="vertical"
+		    	android:background="@drawable/grp_box"
+		    	android:padding="5dp">
+		         	 
+			     <TextView
+			        android:id="@+id/tv_truss"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="@string/txt_truss"
+			        android:textColor="@color/text_main"/>
+			    
+			    <LinearLayout
+			    	android:layout_width="match_parent"
+			    	android:layout_height="wrap_content"
+			   		android:orientation="horizontal">
+				      
+					     <Button 
+					       android:id="@+id/btn_trussThrow"
+					       android:layout_width="wrap_content"
+					       android:layout_weight="1"
+					       android:layout_height="wrap_content"
+					       android:text="@string/txt_throw"
+					       android:onClick="buttonClickedTele"
+					       android:textColor="@color/text_main"/>
+					     
+					     <Button 
+					       android:id="@+id/btn_trussMiss"
+					       android:layout_width="wrap_content"
+					       android:layout_weight="1"
+					       android:layout_height="wrap_content"
+					       android:text="@string/txt_miss"
+					       android:onClick="buttonClickedTele"
+					       android:textColor="@color/text_main"/>
+					     
+					     <Button 
+					       android:id="@+id/btn_trussReceive"
+					       android:layout_width="wrap_content"
+					       android:layout_weight="1"
+					       android:layout_height="wrap_content"
+					       android:text="@string/txt_receive"
+					       android:onClick="buttonClickedTele"
+					       android:textColor="@color/text_main"/>
+				     
+				</LinearLayout>
+				
+			    <Button
+			       android:id="@+id/btn_trussClear"
+			       android:layout_width="match_parent"
+			       android:layout_height="wrap_content"
+			       android:text="@string/txt_clear"
+			       android:onClick="buttonClickedTele"
+			       android:textColor="@color/text_main"/>
+				     
+		     </LinearLayout>
+		     <!-- //////////////// -->
+		     
+		    <!-- SHOT LAYOUT -->
+		     
+		     <LinearLayout
+		    	android:layout_width="match_parent"
+		    	android:layout_height="wrap_content"
+		   		android:orientation="vertical"
+		    	android:padding="5dp"
+		    	android:background="@drawable/grp_box"
+		    	android:layout_marginTop="10dp"
+		    	android:layout_marginBottom="10dp">
+		    
+		        <TextView
+			        android:id="@+id/tv_scoring"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="@string/txt_scoring"
+			        android:textColor="@color/text_main"/>
+		     
+			     <LinearLayout
+			    	android:layout_width="match_parent"
+			    	android:layout_height="wrap_content"
+			   		android:orientation="horizontal">
+			     
+				     <Button 
+				       android:id="@+id/btn_scoreTop"
+				       android:layout_width="wrap_content"
+				       android:layout_height="wrap_content"
+				       android:layout_weight="1"
+				       android:text="@string/txt_top"
+				       android:onClick="buttonClickedTele"
+				       android:textColor="@color/text_main"/>
+				     
+				     <Button 
+				       android:id="@+id/btn_scoreBottom"
+				       android:layout_width="wrap_content"
+				       android:layout_height="wrap_content"
+				       android:layout_weight="1"
+				       android:text="@string/txt_bottom"
+				       android:onClick="buttonClickedTele"
+				       android:textColor="@color/text_main"/>
+			     
+			     </LinearLayout>
+			     
+			      <LinearLayout
+			    	android:layout_width="match_parent"
+			    	android:layout_height="wrap_content"
+			   		android:orientation="horizontal">
+				     
+			        <Button 
+				     	android:id="@+id/btn_missSub"
+				     	android:layout_width="match_parent"
+				     	android:layout_height="wrap_content"
+				     	android:layout_weight="4"
+				    	android:text="@string/txt_minus"
+				    	android:onClick="buttonClickedTele"
+				    	android:textColor="@color/text_main"
+				    	android:textSize="35sp"/>
+
+			        <Button
+			            android:id="@+id/btn_scoreMiss"
+			            android:layout_width="match_parent"
+			            android:layout_height="match_parent"
+			            android:layout_weight="1"
+			            android:onClick="buttonClickedTele"
+			            android:text="@string/txt_miss"
+			            android:textColor="@color/text_main" />
+			     
+			     </LinearLayout>
+			  
+			     <Button 
+			       android:id="@+id/btn_endCycle"
+			       android:layout_width="match_parent"
+			       android:layout_height="wrap_content"
+			       android:textColor="@color/text_main"
+			       android:layout_gravity="center_horizontal"
+			       android:onClick="buttonClickedTele"
+			       android:text="@string/txt_endcycle"/>
+			     
+			 </LinearLayout>
+			 
+		     <Button 
+			       android:id="@+id/btn_endMatch"
+			       android:layout_width="match_parent"
+			       android:layout_height="wrap_content"
+			       android:layout_gravity="center_horizontal"
+			       android:text="@string/txt_endMatch"
+			       android:onClick="switchTabs"
+			       android:textColor="@color/text_main"/>
+		     
+		</LinearLayout>
+   
+</ScrollView>

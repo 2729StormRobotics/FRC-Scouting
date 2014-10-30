@@ -1,0 +1,31 @@
+package com.scouter.activities.help;
+
+import com.example.scouter.R;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+
+/**
+ * 
+ * Not much to these classes, they are static so the activity is set up inside its layout file
+ * 
+ * @author Anthony Drenik
+ * 
+ */
+
+public class MainHelpActivity extends Activity {
+
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main_help);
+		this.setTitle("Help");
+	}
+
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.help, menu);
+		return true;
+	}
+
+}

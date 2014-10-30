@@ -1,0 +1,210 @@
+package com.scouter.activities;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.Toast;
+
+import com.example.scouter.R;
+import com.scouter.activities.help.MainHelpActivity;
+import com.scouter.util.DataHandler;
+import com.scouter.util.TeamNumbers;
+
+/**
+ * 
+ * Main activity class. This is the start screen of the app.
+ * 
+ * @author Anthony Drenik
+ * 
+ */
+
+public class MainActivity extends Activity {
+
+	//////////CONSTANTS///////////
+	
+	/*
+	 * These constants are used as id's for the data that we put
+	 * into the intent when switching activities. Look into 
+	 * startMatch() to see them in use. 
+	 */
+	
+    public static final String EXTRA_MATCH_NUM = "MatchNum";
+	public static final String EXTRA_TEAM_NUM = "TeamNum";
+	public static final String EXTRA_IS_RED = "isRed";
+	
+	//the buttons used to pick alliance color
+	public static RadioButton btnRed, btnBlue;
+
+	//////////INHERITED METHODS//////////
+	
+	/*
+	 * All of these methods are inherited from the abstract Activity class
+	 * 		onCreate() is ran when the activity is created
+	 * 		onCreateOptionsMenu() is ran within super.onCreate()
+	 * 		onOptionItemSelected() is ran when an item in the menu (top of Activity) is pressed
+	 */
+	
+    protected void onCreate(Bundle savedInstanceState) {
+    	
+    	//initializes activity
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        //finds alliance color buttons
+        btnRed = (RadioButton) findViewById(R.id.btn_red);
+        btnBlue = (RadioButton) findViewById(R.id.btn_blue);
+        
+        //sets button images to off images
+        btnRed.setButtonDrawable(R.drawable.chkbox_off);
+        btnBlue.setButtonDrawable(R.drawable.chkbox_off);
+        
+        //adds an event listener to button red
+        btnRed.setOnCheckedChangeListener(new OnCheckedChangeListener(){
+
+			public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+				if(btnRed.isChecked())
+					btnRed.setBackgroundResource(R.drawable.high_rzone_border);		//sets button image to on image
+				else
+					btnRed.setBackgroundResource(R.drawable.trans_rzone_border);	//sets button image to off image
+				
+			}
+        	
+        });
+        
+        //adds an event listener to button blue
+        btnBlue.setOnCheckedChangeListener(new OnCheckedChangeListener(){
+
+			public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+				if(btnBlue.isChecked())
+					btnBlue.setBackgroundResource(R.drawable.high_bzone_border);	//sets button image to on image
+				else
+					btnBlue.setBackgroundResource(R.drawable.trans_bzone_border);	//sets button image to off image
+				
+			}
+        	
+        });
+        
+        /*
+         * Creates a new TeamNumbers class, which is a reference class
+         * for the project. It contains every team number in FIRST for
+         * 2014. We stored all these numbers in a text file.
+         */
+        
+        new TeamNumbers(this);
+    }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem i) {
+    	switch(i.getItemId()){
+		case R.id.action_MainHelp:
+			//sends the user to the main help activity
+			Intent intent = new Intent(this,MainHelpActivity.class);
+			startActivity(intent);
+			return true;
+		default:
+			return false;
+    	}
+    }
+    
+    //////////UTILITY METHODS//////////
+    
+    //checks if all data was entered
+    public boolean dataEntered() {
+    	
+    	//finds all the views
+    	EditText txtmatch = (EditText) this.findViewById(R.id.te_match_num);
+		EditText txtteam = (EditText) this.findViewById(R.id.te_team_num);
+		RadioButton btnBlue = (RadioButton) this.findViewById(R.id.btn_blue);
+		RadioButton btnRed = (RadioButton) this.findViewById(R.id.btn_red);
+		
+		if(!txtmatch.getText().toString().matches("") && 		//Checks to make sure a match number was entered
+		   !txtteam.getText().toString().matches("") && 		//checks to make sure a team number was entered
+		   (btnBlue.isChecked() || btnRed.isChecked())){		//checks to make sure an alliance color was selected
+			return true;
+		}return false;
+    }
+
+    //starts match, sends user to match activity
+    public void startMatch(View view) {
+    	
+    	//checks if all data was entered
+    	if(this.dataEntered()){
+    		
+    		/*
+    		 * this resets the DataHandler class, which stores all the data from the match
+    		 * we do this in case the user finishes a match and then starts a new one
+    		 * this way data from different matches does not overlap
+    		 */
+    		
+    		DataHandler.clear();
+    		
+    		//creates a new intent, needed to change activities
+			Intent intent = new Intent(this, MatchActivity.class);
+			
+			//finds all views
+			EditText txtmatch = (EditText) this.findViewById(R.id.te_match_num);
+			EditText txtteam = (EditText) this.findViewById(R.id.te_team_num);
+			RadioButton btnRed = (RadioButton) this.findViewById(R.id.btn_red);
+			
+			/*
+			 * we only need to reference button red, because if 
+			 * btnRed.isChecked() is false, then the alliance 
+			 * color must be blue
+			 */
+			
+			//gets the match and team numbers
+			String matchNum = txtmatch.getText().toString();
+			String teamNum = txtteam.getText().toString();
+			
+			/*
+			 * uses the TeamNumber reference class to check if the 
+			 * team number entered is an actual team number. First
+			 * the string teamNum has to be converted to an integer,
+			 * hence the Integer.parseInt(teamNum)
+			 */
+			
+			if(!TeamNumbers.isATeamNumber(Integer.parseInt(teamNum))){
+				
+				//if the team number is not valid, a message prompts the user to try again
+				Toast.makeText(this,"That is not a valid team number.",Toast.LENGTH_SHORT).show();
+				return;
+			
+			}
+			
+			//gets whether btnRed is selected or not
+			boolean isRed = btnRed.isChecked();
+			
+			/*
+			 * This puts the extras into our original intent.
+			 * Extras are just data that you want to be transferred
+			 * over to a different activity. intent.putExtra() takes
+			 * both an string id and the actual value you want to
+			 * transfer. The id serves as a way to identify the 
+			 * different variables.
+			 */
+			
+			intent.putExtra(EXTRA_MATCH_NUM,matchNum);		//match number
+			intent.putExtra(EXTRA_TEAM_NUM,teamNum);			//team number
+			intent.putExtra(EXTRA_IS_RED,isRed);				//if alliance is red
+			
+			//sends the user to the match activity
+			startActivity(intent);
+			
+    	}else
+    		
+    		//if not all data is entered, prompts the user to try again
+    		Toast.makeText(this,"Please enter all the team's information.",Toast.LENGTH_SHORT).show();
+    	
+	}
+    
+}

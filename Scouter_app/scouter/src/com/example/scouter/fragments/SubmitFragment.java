@@ -1,0 +1,73 @@
+package com.example.scouter.fragments;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.Fragment;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.example.scouter.DataHandler;
+import com.example.scouter.R;
+
+@SuppressLint("NewApi")
+public class SubmitFragment extends Fragment {
+
+	 @Override
+	 public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+		 // Inflate the layout for this fragment
+	     return inflater.inflate(R.layout.submit_fragment, container, false);
+	 }
+	 
+	 @Override
+	 public void onResume() {
+		 super.onResume();
+		 
+		 //gets activity
+		 Activity activity = this.getActivity();
+		 
+		 //finds all the text views to update
+		 TextView tv_matchNum = (TextView) activity.findViewById(R.id.submit_matchNum),
+				  tv_teamNum = (TextView) activity.findViewById(R.id.submit_teamNum),
+				  tv_alliance = (TextView) activity.findViewById(R.id.submit_alliance),
+				  tv_cycles = (TextView) activity.findViewById(R.id.submit_cycleNum),
+				  
+				  tv_topGoals = (TextView) activity.findViewById(R.id.submit_topGoals),
+				  tv_bottomGoals = (TextView) activity.findViewById(R.id.submit_bottomGoals),
+				  
+		 		  tv_assistsThrown = (TextView) activity.findViewById(R.id.submit_assistsThrown),
+				  tv_assistsCaught = (TextView) activity.findViewById(R.id.submit_assistsCaught),
+				  
+				  tv_trussPasses = (TextView) activity.findViewById(R.id.submit_trussesThrown),
+				  tv_trussCatches = (TextView) activity.findViewById(R.id.submit_trussesCaught),
+				  
+				  tv_topTele = (TextView) activity.findViewById(R.id.submit_topTele),
+				  tv_bottomTele = (TextView) activity.findViewById(R.id.submit_bottomTele);
+		 
+		 //updates match and team info
+		 tv_matchNum.setText("Match "+DataHandler.getMatchNum());
+		 tv_teamNum.setText("Team "+DataHandler.getTeamNum());
+		 tv_alliance.setText(((DataHandler.isRed())?"Red ":"Blue ") + "Alliance");
+		 tv_cycles.setText("Cycles: "+DataHandler.getCycles());
+		 
+		 //////updates autonomous info//////
+		 //updates goals made
+		 tv_topGoals.setText("Top Goals Made: "+DataHandler.getTopGoalsAuto());
+		 tv_bottomGoals.setText("Bottom Goals Made: "+DataHandler.getBotGoalsAuto());
+		 
+		 /////updates tele op info//////
+		 
+		 //updates assist text
+		 tv_assistsThrown.setText("Assists Thrown: "+DataHandler.getTotalThrownAssists());
+		 tv_assistsCaught.setText("Assists Caught: "+DataHandler.getTotalCaughtAssists());
+		 //updates truss text
+		 tv_trussPasses.setText("Truss Passes Thrown: "+DataHandler.getTotalTrussPasses());
+		 tv_trussCatches.setText("Truss Passes Caught: "+DataHandler.getTotalTrussCatches());
+		 //updates goal info
+		 tv_topTele.setText("Top Goals Made: "+DataHandler.getTopGoalsTele());
+		 tv_bottomTele.setText("Bottom Goals Made: "+DataHandler.getBotGoalsTele());
+	 }
+
+}
